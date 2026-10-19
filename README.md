@@ -1,17 +1,34 @@
-# edd2_proyecto_final
+# Proyecto final · Mini Twitter
 
-A new Flutter project.
+Estructuras de Datos II · Universidad Autónoma de Occidente · Danny Castrillón
 
-## Getting Started
+Plataforma tipo Twitter hecha en Flutter (versión reducida, sin backend).
 
-This project is a starting point for a Flutter application.
+## Ejecutar
 
-A few resources to get you started if this is your first Flutter project:
+    flutter pub get
+    flutter run
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Cuenta de prueba: `danny@correo.com` / `123456`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Qué incluye
+
+- **Login y registro** por correo, y botones de Google y Outlook (simulados, sin OAuth).
+- **Home**: crear publicaciones, comentar, responder comentarios en cualquier nivel,
+  likes a publicaciones y comentarios, y chat con amigos conectados.
+- **Amigos**: listar, agregar y eliminar.
+- **Perfil**: editar nombre, usuario, correo, biografía y foto de perfil.
+- **Datos**: JSON simulado en `lib/datos/datos_simulados.dart`. Nada es persistente
+  porque esta versión no tiene backend ni base de datos.
+
+## Estructuras de datos
+
+1. **Lista enlazada de publicaciones** (`lib/estructuras/lista_publicaciones.dart`):
+   el feed. Las publicaciones nuevas entran por `head` (`prepend`) y se recorre con `next`.
+2. **Árbol N-ario de comentarios** (`lib/estructuras/arbol_comentarios.dart`):
+   cada publicación es la raíz, sus hijos son los comentarios y cada comentario puede
+   tener respuestas. Para encontrar el comentario al que se responde se usa DFS.
+
+## Pendiente para la versión completa
+
+Backend (modelos, rutas, controladores, middlewares), sockets para el chat y base de datos MongoDB.
